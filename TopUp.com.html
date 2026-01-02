@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TopUp.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css" />
     <link rel="icon" href="Image/Logo_TopUp.com.jpg" type="image/png" />
   </head>
@@ -12,34 +13,26 @@
     <header>
       <div class="header-title">
         <img src="Image/Logo_TopUp.com.jpg" alt="Logo" class="logo" />
+
         <h1>TopUp.com<br /><span>Always There For You</span></h1>
       </div>
-      <nav>
+      <nav role="navigation" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
-          <li>
-            <a href="#">Games</a>
-            <ul class="dropdown">
-              <li><a href="#">Free Fire</a></li>
-              <li><a href="#">PUBG Mobile</a></li>
-              <li><a href="#">Genshin Impact</a></li>
-              <li><a href="#">Mobile Legends</a></li>
-              <li><a href="#">More Games</a></li>
-            </ul>
-          </li>
+          <li><a href="#game-highlights">Games</a></li>
           <li><a href="#">Login</a></li>
           <li><a href="#">About</a></li>
         </ul>
       </nav>
-      <div class="hamburger">☰</div>
+      <div class="hamburger" aria-label="Menu" role="button" tabindex="0">☰</div>
     </header>
 
     <main>
       <section>
-        <div class="slideshow-container">
+        <div id="slideshow" class="slideshow-container">
           <div class="Slides_fade">
             <img
-              src="https://th.bing.com/th/id/OIP.kRRnqpenhzoAKQE0JDA9FQHaD0?rs=1&pid=ImgDetMain"
+              src="https://assets.telkomsel.com/public/2025-03/Apa-Itu-Panel-FF-Kenali-Fitur-dan-Risikonya-di-Free-Fire.jpg?VersionId=OmrToKJ2RaQgNDTkqOAof3AlaUBiu9uF"
               alt="Slide 1"
             />
           </div>
@@ -74,7 +67,7 @@
           </div>
           <div class="Slides_fade">
             <img
-              src="https://th.bing.com/th/id/OIP.LxrtOCqhDVaRUshPUm95AgHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+              src="https://web-xlrvm.s3.ap-southeast-3.amazonaws.com/images/post/93f97cd8-1ac8-4e39-8625-f62d8d99bc64.jpg"
               alt="Slide 7"
             />
           </div>
@@ -104,7 +97,7 @@
           </div>
           <div class="Slides_fade">
             <img
-              src="https://th.bing.com/th/id/R.ae94f92f1d47d674c04d329b126431bd?rik=h%2fZLQ1Q5TYsDCw&pid=ImgRaw&r=0"
+              src="https://www.fastpay.co.id/blog/wp-content/uploads/2018/11/game-4.jpg"
               alt="Slide 12"
             />
           </div>
@@ -126,12 +119,16 @@
               alt="Slide 15"
             />
           </div>
-
-          <div class="dots" style="text-align: center; margin-top: 10px">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+          <div class="Slides_fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRjARMouLnqPONcKjXiZYv9BD3el4FW5PCQ&s"
+              alt="Slide 16" />
           </div>
+          <div class="Slides_fade">
+            <img
+              src="https://play-lh.googleusercontent.com/AhjoisaNnPOVrtrQzzdjKGu4VGQkq494HfPk2QyvKuamgWqpIIc5kv-t6juUrhSAEtA=w526-h296-rw"
+              alt="Slide 17" />
+          </div>
+          <div class="dots" id="dots-container" style="text-align: center; margin-top: 10px"></div>
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
@@ -247,12 +244,12 @@
 
       <section class="checkout">
         <h2>Checkout</h2>
-        <form>
+        <form id="checkout-form" aria-label="Checkout form">
           <label for="email">Email:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" required placeholder="nama@contoh.com" />
 
           <label for="payment">Payment Method:</label>
-          <select id="payment">
+          <select id="payment" required>
             <option value="credit">Credit Card</option>
             <option value="paypal">PayPal</option>
             <option value="gopay">Gopay</option>
@@ -261,6 +258,7 @@
           </select>
 
           <button type="submit">Complete Purchase</button>
+          <div id="form-message" aria-live="polite"></div>
         </form>
       </section>
     </main>
